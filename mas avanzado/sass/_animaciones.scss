@@ -1,0 +1,30 @@
+.circle {//elemento circulo
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@for $iterador from 1 through 5 {//iterador
+    
+
+        //genera selector-1,selector-2....
+        .circle-#{$iterador} {//pongo el numero que llegue
+            animation-name: animation#{$iterador};
+
+            @keyframes animation#{$iterador} {//pongo el numero que llegue
+                100%{
+                    transform:translate(50%*$iterador);//realizo multiplicacion
+                }
+            }
+
+            @if $iterador==5{
+animation-direction: alternate-reverse;//cambio sentido del ultimo
+            }
+        
+    }
+}

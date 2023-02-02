@@ -1,0 +1,14 @@
+@use "sass:math";//uso para calculos
+@mixin flex($justify){//mixin con argumento
+    display:flex;
+    align-items: center;
+    justify-content: $justify;
+  
+}
+
+
+
+@function pixeles-rem($pixeles){//funcion con argumento y hago calculos
+$rem: math.div($pixeles,16)*1rem;
+@return $rem;
+}

@@ -1,0 +1,38 @@
+@use "variables";//cojo la hoja de variables
+$selectorNAV:".nav";//defino selector
+#{$selectorNAV} {
+    background-color: variables.$color-azul;//cojo la variable
+
+    ul {
+        background-color: aqua;//anido elementos
+
+        li {
+            color: white;
+        }
+    }
+}
+
+.nav1 {
+    &__container {
+        //selecciona nav1__container
+        background-color: aquamarine;
+    }
+
+    &__item {
+        color: red;
+
+        &--active{//con active en la clase
+            color:yellow;
+        }
+
+        &:hover{//al hacer hover, ver el css generado
+            color:orange;
+        }
+    }
+
+    @media(min-width: 764px){//media query
+        &__container{//nav1_container
+            background-color: brown;
+        }
+    }
+}

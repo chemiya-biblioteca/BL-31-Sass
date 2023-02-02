@@ -1,0 +1,34 @@
+//importar archivo
+
+@use "anidacion";
+
+
+//variables
+
+$color-principal: #ccc;
+$color-letra: green;
+
+
+body {
+    background: $color-principal;
+}
+
+h1 {
+    color: $color-letra;
+}
+
+
+@mixin caja_personalizada($fondo:yellow, $color:$color-letra){
+    background-color: $fondo;
+    border:4px solid black;
+    color:$color;
+}
+
+.cajaMixin{
+    @include caja_personalizada($fondo:purple);
+}
+
+.cajaMixin1{
+    @include caja_personalizada($fondo:purple, $color:white);
+}
+

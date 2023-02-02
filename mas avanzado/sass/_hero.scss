@@ -1,0 +1,31 @@
+@use "mixinFlex";//uso el archivo con la funcion
+
+
+@mixin arreglarImagen{//para arreglar la imagne
+    background: {
+        size:cover;
+        repeat:no-repeat;
+        position: center;
+    }
+}
+.hero{
+    &__container{//& se refiere al padre
+        color:red;
+      
+        @include mixinFlex.flex(start);//llamo la mixin con el argumento
+       
+    }
+
+    &__title{
+
+        font-size: mixinFlex.pixeles-rem(30);//llamo la funcion 
+        margin-bottom: mixinFlex.pixeles-rem(100);
+    }
+}
+
+.fondo{
+    background-image: url("../img/portatil.jpg");//fondo, foto fuera para que el css la lea tambien
+    width:100vw;
+    height:100vh;
+    @include arreglarImagen;//llamo la mixin
+}

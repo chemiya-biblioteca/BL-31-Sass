@@ -1,0 +1,7 @@
+@use "navbar";
+@use "animaciones";
+@use "hero";//esta es la que enlazo con el html, tengo que llamar a las demas
+$color:red;//variable
+h2{
+    background-color: $color;
+}
